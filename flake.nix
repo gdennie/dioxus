@@ -43,14 +43,14 @@
             pkgs.libiconv
             pkgs.pkg-config
           ]
-          ++ lib.optionals pkgs.stdenv.isLinux [
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
             pkgs.glib
             pkgs.gtk3
             pkgs.libsoup_3
             pkgs.webkitgtk_4_1
             pkgs.xdotool
           ]
-          ++ lib.optionals pkgs.stdenv.isDarwin [
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
             pkgs.apple-sdk
             pkgs.libiconv
           ];
